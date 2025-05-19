@@ -12,6 +12,18 @@
 <body>
     <div class="container">
         <h1>Admin</h1>
+
+            <form action="{{ route('HotelS') }}" method="post">
+                @csrf
+                <div class="" style="display: inline">
+                <label for="">Hotel Name</label>
+                <input type="text" name="Hotel" class="form-control">
+                <br>
+                 <input type="submit" value="ค้นหา" class="form-control btn btn-danger">
+                 </div>
+            </form>
+        
+        <br>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
