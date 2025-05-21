@@ -4,9 +4,23 @@ namespace App\Http\Controllers;
 
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class DisplayController extends Controller
 {
+    public function Register()
+    {
+        return view("Register");
+    }
+    public function Login()
+    {
+        return view("Login");
+    }
+
+    public function index()
+    {
+        return view("welcome");
+    }
     public function Admin()
     {
         $List = DB::table("hotels")->get();
@@ -32,6 +46,8 @@ class DisplayController extends Controller
                 "Service1" => $request->input("Service1"),
                 "Service2" => $request->input("Service2"),
                 "Service3" => $request->input("Service3"),
+                "updated_at" => Carbon::now(),
+                "created_at" => Carbon::now(),
             ]
         );
         return $this->Admin();
